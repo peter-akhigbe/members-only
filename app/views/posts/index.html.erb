@@ -4,10 +4,13 @@
   <p>You are signed in as <%= current_user.email %>.</p>
 <% end %>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= post[:body] %> by <%= user_signed_in? ? post.user.email : 'Anonymous' %></li>
-  <% end %>
-</ul>
+
+<% @posts.each do |post| %>
+  <ul>
+    <li>Author: <%= user_signed_in? ? post.user.name : 'Anonymous' %></li>
+    <li>Title: <%= post[:title] %></li>
+    <li>Body: <%= post[:body] %></li>
+  </ul>
+<% end %>
 
 <%= link_to 'New Post', new_post_path %>

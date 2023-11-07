@@ -1,1 +1,1 @@
-<li><%= @post[:body] %> by <%= user_signed_in? ? @post.user.email : 'Anonymous' %></li>
+<li><%= @post[:body] %> by <%= user_signed_in? ? @post.user.name : 'Anonymous' %></li>
